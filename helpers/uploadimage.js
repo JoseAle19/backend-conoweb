@@ -1,11 +1,15 @@
+// Importar dotenv
+import dotenv from "dotenv";
+dotenv.config()
+
 // Impoertaciones de cloudinary
 import { v2 as cloudinary } from "cloudinary";
+const { cloud_name, api_key, api_secret } = process.env;
 cloudinary.config({
-  cloud_name: "db4d1c7ht",
-  api_key: "425425898357517",
-  api_secret: "MoaJq1cpP4QhTUHm4WVddIOxMD0",
+  cloud_name,
+  api_key,
+  api_secret,
 });
-
 export const uploadimage = async ({ photo }) => {
   // Primero obtenemos el path temporal de la imagen recibida, asegurate de escibir el tempFilePath
   const { tempFilePath } = photo;
