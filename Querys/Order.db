@@ -1,0 +1,51 @@
+use conowebñ
+-- Crear tabla para  los pedidos 
+-- Date order
+-- Status otder
+-- Number order
+-- Id Client 
+-- Note client  
+-- Discounts
+Create table
+    purchase (
+        id int (11) primary key auto_increment,
+        date_order timestamp default current_timestamp,
+        status_order varchar(100),
+        number_order int (11),
+        note_client varchar(100),
+        discounts float (11) id_client int (11),
+        foreign key (id_client) references Users (id)
+    );
+
+-- Agregar un pedido
+insert into
+    purchase (
+        date_order,
+        status_order,
+        number_order,
+        note_client,
+        discounts,
+        id_client,
+    )
+values
+    (
+        current_timestamp,
+        'Enviado',
+        1,
+        'Sin nota',
+        0,
+        1
+    );
+
+-- Renombrar el nombre de la tabla
+ALTER TABLE puchase
+RENAME TO purchase;
+
+-- Eliminar una columna de la tabla
+ALTER TABLE purchase DROP COLUMN id_detail_order;
+
+
+
+
+//Todo agregar la columna de total del pedido
+ALTER TABlE purchase ADD Total_order float (11);

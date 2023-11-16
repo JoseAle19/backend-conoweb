@@ -1,0 +1,61 @@
+use conoweb;
+
+-- Crear tabla para los productos
+-- Name
+-- Description
+-- Quantity
+-- Unir
+-- Price
+-- Image
+-- id_category
+-- id_supplier
+-- created_at
+Create table
+    Product (
+        id int (11) primary key auto_increment,
+        name varchar(100),
+        description varchar(100),
+        quantity int (11),
+        id_unit varchar(100),
+        price float (11),
+        image varchar(100),
+        id_category int (11),
+        id_supplier int (11),
+        created_at timestamp default current_timestamp,
+        foreign key (id_category) references Category (id)
+        foreign key (id_supplier) references Supplier (id)
+    );
+
+-- id 1  juan
+-- id 2 pedro
+-- add product
+insert into
+    Product (
+        name,
+        description,
+        quantity,
+        id_unit,
+        price,
+        image,
+        id_category,
+        id_supplier
+    )
+values
+    (
+        'Cono',
+        'Cono de sabor vainilla',
+        100,
+        'pieza',
+        10,
+        'https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750179165607L.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF',
+        1,
+        1
+    );
+
+-- Lisar todo los productos
+'select Product.name as product_name, Product.description as product_description, Product.quantity as product_quantity, Product.image as product_image, Product.unit as product_unit, Product.price as product_price, Category.name as category_name, Supplier.name as supplier_name, Supplier.contact_name as supplier_contact_name, Supplier.phone as supplier_phone, Supplier.company_name as supplier_company_name   FROM Product  inner join Category on Product.id_category = Category.id inner join Supplier on Product.id_supplier = Supplier.id;'
+
+
+
+-- Agregar una relacion mas
+ALTER TABLE product FOREIGN  KEY  (id_unit) REFERENCES UNITS(id)

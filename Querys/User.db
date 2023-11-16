@@ -1,0 +1,30 @@
+use conowebñ
+Create table Users(
+    id int primary key auto_increment,
+    name varchar(50),
+    lastname varchar(50),
+    email varchar(50),
+    password varchar(50),
+    created_at timestamp default current_timestamp,
+    rol_id int(11),
+    foreign key (rol_id) references Roles(id)
+);
+-- Roles
+-- 1. Admin
+-- 2. User
+
+
+
+-- Add Users
+insert into Users(name, lastname, email, password, rol_id) values('jose', 'perez', 'jose@gmail.com', '123456', 1);
+insert into Users(name, lastname, email, password, rol_id) values('user', 'user', 'user@gmail.com', 'user', 1);
+insert into Users(name, lastname, email, password, rol_id) values('admin', 'admin', 'admin@gmail.com', 'admin', 1);
+-- Actualizar id del rol
+UPDATE Users SET rol_id = {Nuevo rol id} WHERE `users`.`id` = 6;
+
+-- Inner join
+select * from Users inner join Roles on Users.rol_id = Roles.id;
+
+
+-- delete all users
+delete from Users;

@@ -1,0 +1,10 @@
+use conoweb;
+Create table Roles(
+    id int(11) primary key auto_increment,
+    name varchar(50),
+    created_at timestamp default current_timestamp,
+);
+
+-- add rol
+insert into Roles(name) values('Admin');
+insert into Roles(name) values('User');

@@ -1,0 +1,29 @@
+use conoweb;
+
+-- Crear tabla para tipo de unidades
+-- id
+-- name
+-- symbol
+-- description
+
+CREATE TABLE IF NOT EXISTS Units (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    symbol VARCHAR(10) NOT NULL,
+    description VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+
+-- Insertar datos en la tabla Units
+INSERT INTO Units (name, symbol, description) VALUES ('Kilogramo', 'Kg', 'Unidad de masa');
+INSERT INTO Units (name, symbol, description) VALUES ('Gramo', 'g', 'Unidad de masa');
+INSERT INTO Units (name, symbol, description) VALUES ('Miligramo', 'mg', 'Unidad de masa');
+INSERT INTO Units (name, symbol, description) VALUES ('Litro', 'L', 'Unidad de volumen');
+INSERT INTO Units (name, symbol, description) VALUES ('Mililitro', 'ml', 'Unidad de volumen');
+INSERT INTO Units (name, symbol, description) VALUES ('Metro', 'm', 'Unidad de longitud');
+INSERT INTO Units (name, symbol, description) VALUES ('Centimetro', 'cm', 'Unidad de longitud');
+INSERT INTO Units (name, symbol, description) VALUES ('Milimetro', 'mm', 'Unidad de longitud');
+INSERT INTO Units (name, symbol, description) VALUES ('Unidad', 'u', 'Unidad de cantidad');
+INSERT INTO Units (name, symbol, description) VALUES ('Cucharada', 'cda', 'Unidad de cantidad');
+INSERT INTO Units (name, symbol, description) VALUES ('Cucharadita', 'cdta', 'Unidad de cantidad'

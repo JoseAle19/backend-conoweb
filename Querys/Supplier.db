@@ -1,0 +1,23 @@
+use conoweb;
+
+-- Crear tabla para los proveedores
+-- Name
+-- Contact name
+-- Phone
+-- Email
+-- Company Name
+
+Create table Supplier(
+    id int(11) primary key auto_increment,
+    name varchar(100),
+    contact_name varchar(100),
+    phone varchar(100),
+    email varchar(100),
+    company_name varchar(100),
+    created_at timestamp default current_timestamp
+);
+
+
+-- add provider
+insert into Supplier(name, contact_name, phone, email, company_name) values('Juan', 'juanito', '9631687546', 'juan@gmail.com', 'Conos de Mexico');
+insert into Supplier(name, contact_name, phone, email, company_name) values('Pedro', 'pedrito', '9631687546', 'pedro@hotmail', 'Todo para conos');

@@ -1,0 +1,31 @@
+USE conoweb;
+
+-- id_order
+-- id_product
+-- quantity
+-- price
+-- total
+-- Crear tabla para detalle del pedido
+Create table
+    DetailOrder (
+        id int (11) primary key auto_increment,
+        id_order int (11),
+        id_product int (11),
+        quantity int (11),
+        price float (11),
+        total float (11),
+        foreign key (id_order) references Purchase (id),
+        foreign key (id_product) references Product (id)
+    );
+
+insert into
+    DetailOrder (id_order, id_product, quantity, price, total)
+values
+    (1, 1, 10, 10, 100);
+
+
+-- pedidos
+ SELECT * FROM `detailorder`
+INNER JOIN product on detailorder.id_product like product.id 
+INNER JOIN purchase on detailorder.id_order like purchase.id
+INNER JOIN users on purchase.id_client like users.id

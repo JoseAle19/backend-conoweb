@@ -1,0 +1,17 @@
+use conoweb;
+
+
+-- Crear tala para las categorias de cada producto
+-- Name
+-- created_at
+CREATE TABLE Category(
+    id int(11) primary key auto_increment,
+    name varchar(50),
+    created_at timestamp default current_timestamp
+
+);
+
+-- add category
+insert into Category(name) values('Conos');
+insert into Category(name) values('Endulzantes');
+insert into Category(name) values('Aderezos');
